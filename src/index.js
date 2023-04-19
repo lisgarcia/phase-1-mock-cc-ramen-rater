@@ -50,15 +50,15 @@ function ramenDetail (ramens) {
 const ramenForm=document.querySelector("#new-ramen") //selects input form-working
 
 
-const newRamenInfo = ("change", (e)) => {
-    name1: e.target.name.value
-    restaurant: e.target.restaurant.value
-    imgDetail: e.target.image.value
-    rating: e.target.rating.value
-    comment: e.target.comment.value
+// const newRamenInfo = ("change", (e)) => {
+//     name1: e.target.name.value
+//     restaurant: e.target.restaurant.value
+//     imgDetail: e.target.image.value
+//     rating: e.target.rating.value
+//     comment: e.target.comment.value
 
-    ramenList.append(newRamenInfo)
-}
+//     ramenList.append(newRamenInfo)
+// }
 
 // function submitForm(ramenForm) {
 //     ramenForm.addEventListener("submit", (e)=> 
