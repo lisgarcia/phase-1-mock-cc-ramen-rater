@@ -8,9 +8,8 @@ const detailName=document.querySelector("#ramen-detail .name")
 const detailRestaurant=document.querySelector("#ramen-detail .restaurant")
 const ratingDisplay =document.getElementById("rating-display")
 const commentDisplay=document.getElementById("comment-display")
-// 1. see all ramen images in the div with #ramen-menu
-//     request the data, then iterate through the data
-//         //create one image tag for the current ramen
+// 1. see all ramen images in the div with #ramen-menu 
+//Request the data, then iterate through the data/create one img tag for the current ramen
 //DRY FETCH FUNCTION
 function getRamen(url) {
     return fetch(url)
@@ -32,11 +31,23 @@ getRamen(url).then((data) => {
 })})
 getRamen(url)
 
-// function getData() { }
-//     fetch(url) //end point
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)  
-//         })
-//         .catch(err => console.log(err))
-//     
+// 3rd deliverable submitting form
+const ramenForm=document.getElementById("new-ramen")
+
+ramenForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    ramenImg = document.createElement("img")
+    ramenImg.src = e.target.image.value
+    
+    ramenMenu.appendChild(ramenImg)
+
+    ramenImg.addEventListener('click', ()=> {
+        detailImage.src = e.target.image.value
+        detailName.textContent=e.target.name.value
+        detailRestaurant.textContent=e.target.restaurant.value
+        ratingDisplay.textContent=e.target.rating.value
+        commentDisplay.textContent=e.target["new-comment"].value
+        ramenMenu.appendChild(ramenImg)
+    })
+
+})
